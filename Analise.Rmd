@@ -1,0 +1,36 @@
+
+```{r}
+install.packages("dplyr")
+install.packages("readr")
+install.packages("RColorBrewer")
+library(dplyr)
+library(readr)
+library(RColorBrewer)
+```
+
+
+```{r}
+# Importando arquivos
+Perfumes_Masculinos = read.csv("ebay_mens_perfume.csv", na.strings = "", stringsAsFactors = T)
+Perfumes_Femininos = read.csv("ebay_womens_perfume.csv", na.strings = "", stringsAsFactors = T)
+
+# Renomando as colunas
+colnames(Perfumes_Masculinos) = c("Marca", "Titulo", "Tipo", "Preco", "Preco_Em_Dolares", "Disponiveis", "Texto_De_Disponibilidade", "Vendidos", "Ultima_Atualizacao", "Localizacao_Item")
+colnames(Perfumes_Femininos) = c("Marca", "Titulo", "Tipo", "Preco", "Preco_Em_Dolares", "Disponiveis", "Texto_De_Disponibilidade", "Vendidos", "Ultima_Atualizacao", "Localizacao_Item")
+```
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                                                      # LIMPEZA DE DADOS DO CONJUNTO DE PERUMES MASCULINOS
+```{r}
+# Verificando se há valores nulos
+sum(is.na(Perfumes_Masculinos))
+Perfumes_Masculinos[!complete.cases(Perfumes_Masculinos),]
+```
+
+```{r}
+
+
+```
+
