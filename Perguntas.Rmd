@@ -1,0 +1,35 @@
+#Sobre tempo e localização
+
+    Em quais estados (uf) ocorrem mais acidentes?
+    
+    Quais rodovias (br) são mais perigosas?
+    
+    Há meses ou dias da semana com mais registros de acidentes?
+    
+    O horário (horario) influencia na gravidade dos acidentes?
+    
+    Sobre causas e tipos de acidentes
+    
+    Quais são as principais causas de acidentes no Brasil?
+    
+    Quais tipos de acidentes (tipo_acidente) mais geram vítimas fatais?
+    
+    Condições climáticas (condicao_metereologica) estão relacionadas a mais acidentes?
+    
+
+#Sobre vítimas
+
+    Quantas pessoas em média ficam feridas ou morrem por acidente?
+    
+    Existe diferença no número de mortos entre acidentes de pista simples e pista dupla (tipo_pista)?
+    
+    Municípios com maior número de mortes em rodovias federais.
+    
+
+#Comparativos e tendências
+
+    Como a quantidade de acidentes evoluiu entre 2007 e 2023?
+    
+    Quais estados reduziram mais (ou aumentaram) acidentes ao longo dos anos?
+    
+    Existe relação entre presença de radares (Dados_Radares.csv) e redução de acidentes em determinadas BRs?
