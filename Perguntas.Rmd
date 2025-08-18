@@ -1,35 +1,43 @@
-#Sobre tempo e localização
+📊 Perguntas gerais
 
-    Em quais estados (uf) ocorrem mais acidentes?
+    Qual o número total de acidentes registrados em 2007?
     
-    Quais rodovias (br) são mais perigosas?
+    Qual foi o mês com mais acidentes?
     
-    Há meses ou dias da semana com mais registros de acidentes?
-    
-    O horário (horario) influencia na gravidade dos acidentes?
-    
-    Sobre causas e tipos de acidentes
-    
-    Quais são as principais causas de acidentes no Brasil?
-    
-    Quais tipos de acidentes (tipo_acidente) mais geram vítimas fatais?
-    
-    Condições climáticas (condicao_metereologica) estão relacionadas a mais acidentes?
-    
+    Qual o dia da semana com maior ocorrência de acidentes?
 
-#Sobre vítimas
+🚗 Perguntas sobre localização
 
-    Quantas pessoas em média ficam feridas ou morrem por acidente?
+    Qual estado (uf) teve mais acidentes?
     
-    Existe diferença no número de mortos entre acidentes de pista simples e pista dupla (tipo_pista)?
+    Quais os municípios com maior número de registros?
     
-    Municípios com maior número de mortes em rodovias federais.
-    
+    Qual rodovia (br) teve mais ocorrências?
 
-#Comparativos e tendências
+👥 Perguntas sobre vítimas
 
-    Como a quantidade de acidentes evoluiu entre 2007 e 2023?
+    Qual a média de pessoas envolvidas por acidente?
     
-    Quais estados reduziram mais (ou aumentaram) acidentes ao longo dos anos?
+    Qual a taxa de mortalidade (mortos / pessoas envolvidas)?
     
-    Existe relação entre presença de radares (Dados_Radares.csv) e redução de acidentes em determinadas BRs?
+    Qual o total de feridos graves e leves?
+
+🌙 Perguntas sobre circunstâncias
+
+    Em qual fase do dia (manhã, tarde, noite, madrugada) ocorrem mais acidentes?
+    
+    O sentido da via (crescente/decrescente) influencia no número de acidentes?
+    
+    Qual a condição meteorológica mais associada a acidentes?
+    
+    O tipo de pista (simples, dupla) tem relação com a gravidade do acidente?
+
+🔍 Perguntas mais analíticas
+
+    Existe diferença no número de mortos entre áreas rurais e urbanas (uso_solo)?
+    
+    Qual o tipo de acidente mais letal?
+    
+    Há alguma BR específica que concentre acidentes fatais em determinados trechos (km)?
+    
+    Acidentes com múltiplos veículos resultam em mais mortos do que os com apenas um veículo?
