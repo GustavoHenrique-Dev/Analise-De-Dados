@@ -1,73 +1,39 @@
 ```{r}
-#install.packages("dplyr")
-#install.packages("readr")
-#install.packages("lubridate")
-#install.packages("hms")
+install.packages("dplyr")
+install.packages("readr")
+install.packages("hms")
 library(dplyr)
 library(readr)
-library(lubridate)
 library(hms)
-
 ```
 
 ```{r}
-# Importando Arquivos
-Dados_2007 = read.csv("Dados_PRF_2007.csv", na.strings = "", stringsAsFactors = T, encoding = "latin1", sep = ";")
+# Importando arquivos
+Dados_2007 = read.csv("Dados_PRF_2007.csv", na.strings = "", stringsAsFactors = T, sep = ";", encoding = "latin1")
 Dados_2007
 ```
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                                                                # Limpeza e Tratamento dos dados
+----------------------------------------------------------------------------------------------------
+                                   LIMPEZA E TRATAMENTO DE DADOS
 ```{r}
-
 # Alterando o nome da coluna data_inversa
 Dados_2007 = Dados_2007 %>% rename(data = data_inversa)
 
-
-# Alterando o tipo da coluna data
+# Alterando o tipo da coluna para Date e ordenando 
 Dados_2007$data = as.Date(Dados_2007$data, "%d/%m/%Y")
-Dados_2007 = Dados_2007 %>% arrange(id)
+Dados_2007 = Dados_2007 %>% arrange(data)
+
+# Alterando o tipo da coluna horário
+Dados_2007$horario = as.hms(as.character(Dados_2007$horario))
+
+# Verificando se eistem valores NA no DataFrame
+sum(is.na(Dados_2007))
+
+# Após análise percebi que os valores nulos estão como string (null), vou filtrar para ver em quais linhas e colunas aparece esse valor e alterálos por NA
+Dados_2007 %>% filter(if_any(everything(), ~ as.character(.x) == "(null)"))
+Dados_2007 %>% summarise(across(everything(), ~ sum(as.character(.) == "(null)", na.rm = TRUE)))
 
 
-# Alterando o tipo da coluna horario
-Dados_2007$horario = as_hms(as.character(Dados_2007$horario))
-
-
-# Analisando se há valores fora do padrão ou valores Nulos
-table(Dados_2007$dia_semana)
-table(Dados_2007$uf)
-table(Dados_2007$br)
-table(Dados_2007$km)
-table(Dados_2007$causa_acidente)
-table(Dados_2007$tipo_acidente)
-table(Dados_2007$classificacao_acidente)
-table(Dados_2007$fase_dia)
-table(Dados_2007$sentido_via)
-table(Dados_2007$condicao_metereologica)
-table(Dados_2007$tipo_pista)
-table(Dados_2007$tracado_via)
-table(Dados_2007$uso_solo)
-
-
-# Analisando se existem mais mortos/feridos/ilesos/ignorados do que pessoas envolvidas no acidente
-Dados_2007[Dados_2007$pessoas < Dados_2007$mortos + Dados_2007$feridos_leves + Dados_2007$feridos_graves + Dados_2007$ilesos + Dados_2007$ignorados,]
-
-# Analisando se existem mais veiculos do que pessoas envolvidas no acidente
-Dados_2007[Dados_2007$veiculos > Dados_2007$pessoas,]
-
-# Analisando se o numero total de Feridos é inferior ao numero de Feridos Leves + Feridos Graves
-Dados_2007[Dados_2007$feridos < Dados_2007$feridos_leves + Dados_2007$feridos_graves,]
-
-
-# Existem linhas com valores nulos que não consegui identificar quais poderiam ser, por isso optei por removelas do DataFrame, pois acredito que não irá afetar na análise
-Dados_2007 = Dados_2007[-c(35291, 51664, 69910, 70954, 87367, 1, 2, 41260, 46403, 86385),]
-Dados_2007 = Dados_2007 %>% filter( condicao_metereologica != "(null)", classificacao_acidente != "(null)") 
-
-Dados_2007
-```
-
-```{r}
 
 ```
-                             
-                             
+

@@ -4,7 +4,7 @@
     
     Qual foi o mês com mais acidentes?
     
-    Qual o dia da semana com maior ocorrência de acidentes?
+    Qual o dia da semana com maior ocorrência de acidentes? 
 
 🚗 Perguntas sobre localização
 
